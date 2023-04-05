@@ -1,0 +1,5 @@
+phitnest-api
+phitnest-app
+cli/build
+cli/dist
+cli/phitnest.spec
