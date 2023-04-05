@@ -3,7 +3,7 @@ import os
 import subprocess
 
 executable_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
-cli_root_dir = os.path.join(executable_dir, os.path.pardir)
+cli_root_dir = os.path.join(executable_dir, os.path.pardir, os.path.pardir)
 mono_root_dir = os.path.join(cli_root_dir, os.path.pardir)
 
 github_org_url = "https://github.com/PhitNest/"
