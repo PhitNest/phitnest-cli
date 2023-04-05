@@ -1,7 +1,11 @@
 ### PhitNest CLI
 
-To get started, first run:
+Add the executable (in `cli/dist/win` for windows, `cli/dist/mac` for mac, `cli/dist/linux` for linux) to your PATH
 
-`cli/install` to install the CLI
+### Commands
 
-Then add the executable (in `cli/dist`) to your PATH
+```
+phitnest pull                       # Pulls/Clones all projects
+
+phitnest pull [project names...]    # Pulls all specified projects (space delimeted list)
+```
