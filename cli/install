@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd $(dirname $0)
+
+pyinstaller --onefile --icon=icon.ico --name=phitnest src/phitnest.py
+echo "============================================="
+echo " S U C C E S S F U L L Y   I N S T A L L E D "
+echo "============================================="
+echo "You have installed the PhitNest CLI. To use it, please add the following to your PATH environment variable:"
+echo "$(pwd)/dist"
