@@ -9,7 +9,7 @@ mono_root_dir = os.path.join(cli_root_dir, os.path.pardir)
 github_org_url = "https://github.com/PhitNest/"
 
 
-def pull_all():
+def pull():
     with open(os.path.join(cli_root_dir, "projects.txt"), "r") as f:
         project_name = f.readline().strip()
         has_specific_projects = len(sys.argv) > 2
@@ -43,7 +43,7 @@ def main():
     if len(sys.argv) == 1:
         print_help()
     elif sys.argv[1] == "pull":
-        pull_all()
+        pull()
 
 
 if __name__ == "__main__":
