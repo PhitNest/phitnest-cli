@@ -29,9 +29,6 @@ def pull():
             else:
                 print("Cloning " + project_name)
                 subprocess.run(["git", "clone", repo_url, repo_path]),
-                with open(mono_index, "w") as mono_file:
-                    mono_file.write(
-                        "This is a mono repo index file. Do not delete it.")
 
 
 def api():
