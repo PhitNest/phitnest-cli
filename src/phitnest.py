@@ -4,7 +4,8 @@ import subprocess
 
 executable_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
 if os.path.basename(executable_dir) == "src":
-    executable_dir = os.path.join(executable_dir, os.path.pardir)
+    executable_dir = os.path.join(
+        executable_dir, os.path.pardir, os.path.pardir)
 
 github_org_url = "https://github.com/PhitNest/"
 
@@ -36,12 +37,22 @@ def api():
                                                                                                       "phitnest-api", "build_tools")))
 
 
+def git():
+    if len(sys.argv) < 4:
+        subprocess.run(["git", "--help"])
+    else:
+        subprocess.run(["git"] + sys.argv[3:], cwd=os.path.normpath(
+            os.path.join(executable_dir, sys.argv[1])))
+
+
 def print_help():
     print("Usage: phitnest <command> [options]")
     print("Commands:")
     print(
-        "phitnest pull [projects] - Pulls all projects or the specified projects")
-    print("phitnest api [options] - Runs the API build tool")
+        "phitnest pull [projects]     - Pulls all projects or the specified projects")
+    print("phitnest api [options]       - Runs the API build tool")
+    print(
+        "phitnest [project] git       - Runs git commands in a specific project")
 
 
 def main():
@@ -51,6 +62,9 @@ def main():
         pull()
     elif sys.argv[1] == "api":
         api()
+    elif sys.argv[1] in projects:
+        if len(sys.argv) > 2 and sys.argv[2] == "git":
+            git()
     else:
         print_help()
 
