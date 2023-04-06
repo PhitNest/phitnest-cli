@@ -1,2 +1,0 @@
-phitnest-api
-phitnest-app
