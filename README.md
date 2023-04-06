@@ -5,6 +5,7 @@
 - [core](https://github.com/PhitNest/phitnest-core)
 - [cli](https://github.com/PhitNest/phitnest-cli)
 - [admin](https://github.com/PhitNest/phitnest-admin)
+- [website](https://github.com/PhitNest/phitnest-website)
 
 ### Commands
 
