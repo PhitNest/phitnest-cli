@@ -1,3 +1,11 @@
+### Project Names
+
+- [api](https://github.com/PhitNest/phitnest-api)
+- [app](https://github.com/PhitNest/phitnest-app)
+- [core](https://github.com/PhitNest/phitnest-core)
+- [cli](https://github.com/PhitNest/phitnest-cli)
+- [admin](https://github.com/PhitNest/phitnest-admin)
+
 ### Commands
 
 ```

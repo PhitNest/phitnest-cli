@@ -9,26 +9,27 @@ if os.path.basename(executable_dir) == "src":
 
 github_org_url = "https://github.com/PhitNest/"
 
-projects = ["phitnest-api", "phitnest-app", "phitnest-core", "phitnest-cli"]
+projects = ["api", "app", "core", "cli", "admin"]
 
 
 def pull():
     has_specific_projects = len(sys.argv) > 2
     for project_name in projects:
         if (not has_specific_projects) or project_name in sys.argv[2:]:
+            full_project_name = "phitnest-" + project_name
             repo_path = os.path.normpath(
                 os.path.join(executable_dir, project_name))
             mono_index = os.path.normpath(os.path.join(
                 repo_path, ".mono"))
             has_repo = os.path.exists(mono_index)
-            repo_url = github_org_url + project_name + ".git"
+            repo_url = github_org_url + full_project_name + ".git"
             if has_repo:
-                print("Pulling " + project_name)
+                print("Pulling " + full_project_name)
                 git_dir = os.path.join(repo_path, ".git")
                 subprocess.run(["git", "--git-dir=" + git_dir,
                                 "--work-tree=" + repo_path, "pull"])
             else:
-                print("Cloning " + project_name)
+                print("Cloning " + full_project_name)
                 subprocess.run(["git", "clone", repo_url, repo_path]),
 
 
@@ -41,8 +42,9 @@ def git():
     if len(sys.argv) < 4:
         subprocess.run(["git", "--help"])
     else:
+        full_project_name = "phitnest-" + sys.argv[1]
         subprocess.run(["git"] + sys.argv[3:], cwd=os.path.normpath(
-            os.path.join(executable_dir, sys.argv[1])))
+            os.path.join(executable_dir, full_project_name)))
 
 
 def print_help():
