@@ -18,7 +18,7 @@ def pull():
         if (not has_specific_projects) or project_name in sys.argv[2:]:
             full_project_name = "phitnest-" + project_name
             repo_path = os.path.normpath(
-                os.path.join(executable_dir, project_name))
+                os.path.join(executable_dir, full_project_name))
             mono_index = os.path.normpath(os.path.join(
                 repo_path, ".mono"))
             has_repo = os.path.exists(mono_index)
