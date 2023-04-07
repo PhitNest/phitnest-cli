@@ -9,7 +9,7 @@ if os.path.basename(executable_dir) == "src":
 
 github_org_url = "https://github.com/PhitNest/"
 
-projects = ["api", "app", "core", "cli", "admin", "website"]
+projects = ["api", "app", "core", "cli", "admin", "website", "dgraph-js"]
 
 
 def pull():

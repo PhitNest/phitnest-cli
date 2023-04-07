@@ -6,6 +6,7 @@
 - [cli](https://github.com/PhitNest/phitnest-cli)
 - [admin](https://github.com/PhitNest/phitnest-admin)
 - [website](https://github.com/PhitNest/phitnest-website)
+- [dgraph-js](https://github.com/PhitNest/phitnest-dgraph-js)
 
 ### Commands
 
