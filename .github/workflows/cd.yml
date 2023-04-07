@@ -34,6 +34,26 @@ jobs:
       run: |
         pyinstaller --onefile --icon=icon.ico src/phitnest.py
 
+
+    - name: Delete old artifacts
+      uses: actions/github-script@v6
+      id: artifact
+      with:
+        # Delete all artifacts
+        script: |
+          const res = await github.rest.actions.listArtifactsForRepo({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+          })
+          res.data.artifacts
+            .forEach(({ id }) => {
+              github.rest.actions.deleteArtifact({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                artifact_id: id,
+              })
+            })
+
     - name: Upload executable as artifact
       uses: actions/upload-artifact@v2
       with:
