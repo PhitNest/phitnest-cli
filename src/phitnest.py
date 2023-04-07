@@ -60,13 +60,15 @@ def print_help():
 def main():
     if len(sys.argv) == 1:
         print_help()
+    elif sys.argv[1] in projects:
+        if len(sys.argv) > 2 and sys.argv[2] == "git":
+            git()
+        else:
+            print_help()
     elif sys.argv[1] == "pull":
         pull()
     elif sys.argv[1] == "api":
         api()
-    elif sys.argv[1] in projects:
-        if len(sys.argv) > 2 and sys.argv[2] == "git":
-            git()
     else:
         print_help()
 
